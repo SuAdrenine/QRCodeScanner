@@ -13,31 +13,6 @@
 * iOS 8.0+
 * Xcode 7.0
 
-## 安装
-
-### CocoaPods
-
-* 进入终端，`cd` 到项目目录，输入以下命令，建立 `Podfile`
-
-```bash
-$ pod init
-```
-
-* 在 `Podfile` 中输入以下内容：
-
-```
-platform :ios, '8.0'
-use_frameworks!
-
-pod 'HMQRCodeScanner'
-```
-
-* 在终端中输入以下命令，安装 Pod
-
-```bash
-$ pod install
-```
-
 ## 使用
 
 * 在 `Info.plist` 中添加两个 `值对` 以授权访问 `相机` 和 `相册`
@@ -57,7 +32,7 @@ $ pod install
 * 打开扫描控制器，扫描及完成回调
 
 ```objc
-NSString *cardName = @"天涯刀哥 - 傅红雪";
+NSString *cardName = @"扶我起来，我还能再浪一波";
 UIImage *avatar = [UIImage imageNamed:@"avatar"];
 
 // 实例化扫描控制器
@@ -76,7 +51,7 @@ self.scanResultLabel.text = stringValue;
 * 生成二维码名片
 
 ```objc
-NSString *cardName = @"天涯刀哥 - 傅红雪";
+NSString *cardName = @"扶我起来，我还能再浪一波";
 UIImage *avatar = [UIImage imageNamed:@"avatar"];
 
 [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
@@ -95,7 +70,7 @@ import HMQRCodeScanner
 * 打开扫描控制器，扫描及完成回调
 
 ```swift
-let cardName = "天涯刀哥 - 傅红雪"
+let cardName = "扶我起来，我还能再浪一波"
 let avatar = UIImage(named: "avatar")
 
 let scanner = HMScannerController.scannerWithCardName(cardName, avatar: avatar) { (stringValue) -> Void in
@@ -108,7 +83,7 @@ self.showDetailViewController(scanner, sender: nil)
 * 生成二维码名片
 
 ```swift
-let cardName = "天涯刀哥 - 傅红雪"
+let cardName = "扶我起来，我还能再浪一波"
 let avatar = UIImage(named: "avatar")
 
 HMScannerController.cardImageWithCardName(cardName, avatar: avatar, scale: 0.2) { (image) -> Void in
